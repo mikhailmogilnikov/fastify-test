@@ -23,6 +23,10 @@ export default (app) => {
     { id: 2, name: 'Stepan' },
   ];
 
+  app.get('/users', (req, res) => {
+    res.send('users');
+  });
+
   app.get('/users/:userId', (req, res) => {
     const { userId } = req.params;
     const user = users.find(({ id }) => id === Number(userId));
@@ -32,5 +36,13 @@ export default (app) => {
     } else {
       res.code(404).send('User not found');
     }
+  });
+
+  app.get('/html', (req, res) => {
+    res.type('html').send('<h1>Hello World!</h1>');
+  });
+
+  app.get('/pug', (req, res) => {
+    res.view('src/views/index');
   });
 };
