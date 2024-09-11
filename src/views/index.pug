@@ -1,8 +1,22 @@
 doctype html
-html(lang='en')
-head
-    title Hello Hexlet!
-body
-    main
-    h1 Hello, World!
-    p Fastify + Pug
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Михаил Могильников
+    style(type="text/css").
+      body {
+        font-family: system-ui;
+        background-color: #000;
+        color: #fff;
+      }
+      a {
+        color: lightblue;
+      }
+      a:visited {
+        color: pink;
+      }
+  body
+    block header
+    block content
+    block footer
